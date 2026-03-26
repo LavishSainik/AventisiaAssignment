@@ -1,4 +1,4 @@
-import { SearchIcon, BellIcon, ChevronDown } from "../ui/Icons";
+import { SearchIcon, BellIcon, ChevronDown, WorcspaceLogo } from "../ui/Icons";
 
 function Navbar() {
   return (
@@ -6,11 +6,7 @@ function Navbar() {
       {/* left — logo + workspace selector */}
       <div className="flex items-center gap-3">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-              <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
-            </svg>
-          </div>
+         <WorcspaceLogo />
           <span className="text-white font-semibold text-base tracking-tight">Worcspace</span>
         </div>
         <button className="flex items-center gap-1.5 text-white text-sm px-3 py-1 rounded-md ml-2" style={{ backgroundColor: "rgba(99, 91, 199, 0.7)" }}>

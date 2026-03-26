@@ -226,3 +226,25 @@ export function CreditUsageIcon() {
     </svg>
   );
 }
+
+// Worcspace brand logo — purple abstract "a" mark matching the Figma design
+export function WorcspaceLogo() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+      <defs>
+        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#7C3AED" />
+          <stop offset="100%" stopColor="#4F46E5" />
+        </linearGradient>
+      </defs>
+      <circle cx="30" cy="52" r="10" fill="url(#logoGrad)" />
+      <path
+        d="M55 15 C55 15, 75 15, 75 40 C75 60, 58 68, 42 62 M75 40 L75 85"
+        stroke="url(#logoGrad)"
+        strokeWidth="12"
+        strokeLinecap="round"
+        fill="none"
+      />
+    </svg>
+  );
+}
