@@ -2,19 +2,9 @@ import { SearchIcon, PlusIcon } from "../ui/Icons";
 import KBCard from "./KBCard";
 import Pagination from "./Pagination";
 
-// dummy data — matches the Figma exactly
-const KB_ENTRIES = Array.from({ length: 6 }, (_, i) => ({
-  id: i + 1,
-  title: "Test",
-  description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-  createdOn: "14/07/2025",
-}));
-
-function MainContent({ onCreateNew }) {
+function MainContent({ entries, onCreateNew }) {
   return (
     <main className="flex-1 bg-gray-50 flex flex-col overflow-hidden">
-      {/* scrollable content area */}
       <div className="flex-1 overflow-y-auto p-6 pb-0">
         {/* page header */}
         <div className="flex items-center justify-between mb-6">
@@ -28,7 +18,7 @@ function MainContent({ onCreateNew }) {
               <input
                 type="text"
                 placeholder="Search..."
-                className="border border-gray-300 rounded-lg py-2 pl-9 pr-4 text-sm w-56 outline-none focus:border-primary bg-white placeholder-gray-400"
+                className="border border-gray-300 rounded-lg py-2 pl-9 pr-4 text-sm w-56 outline-none focus:border-indigo-500 bg-white placeholder-gray-400"
               />
             </div>
             <button
@@ -44,7 +34,7 @@ function MainContent({ onCreateNew }) {
 
         {/* card grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {KB_ENTRIES.map((entry) => (
+          {entries.map((entry) => (
             <KBCard
               key={entry.id}
               title={entry.title}
@@ -57,7 +47,7 @@ function MainContent({ onCreateNew }) {
 
       {/* pagination pinned to bottom */}
       <div className="flex-shrink-0 px-6">
-        <Pagination totalRows={6} />
+        <Pagination totalRows={entries.length} />
       </div>
     </main>
   );

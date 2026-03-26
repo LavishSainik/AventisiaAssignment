@@ -23,7 +23,8 @@ const INITIAL_FORM = {
   embeddingModel: "text-embedding-ada-002",
 };
 
-function CreateModal({ isOpen, onClose }) {
+function CreateModal({ isOpen, onClose, onCreate }) {
+
   const [formData, setFormData] = useState(INITIAL_FORM);
 
   // close panel on Escape press
@@ -37,15 +38,14 @@ function CreateModal({ isOpen, onClose }) {
     };
   }
 
-  function handleCreate() {
-    if (!formData.name.trim()) {
-      alert("Name is required and cannot be edited later.");
-      return;
-    }
-    console.log("Creating knowledge base:", formData);
-    setFormData(INITIAL_FORM);
-    onClose();
+ function handleCreate() {
+  if (!formData.name.trim()) {
+    alert("Name is required and cannot be edited later.");
+    return;
   }
+  onCreate(formData);
+  setFormData(INITIAL_FORM);
+}
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
